@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "salmopredict"
+version = "0.1.0"
+description = "AutoGluon-based Incidence predictor for Salmonella virulence-factor gene-frequency features"
+readme = "README.md"
+# Pinned to 3.10 to match the Python version the bundled model was pickled with.
+requires-python = ">=3.10,<3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "salmopredict authors" }]
+keywords = ["salmonella", "incidence", "autogluon", "prediction", "bioinformatics"]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "autogluon.tabular==1.1.1",
+    "pandas>=2.0",
+    "openpyxl>=3.0",
+    "rich-argparse>=1.4",
+]
+
+[project.optional-dependencies]
+gui = ["streamlit>=1.30"]
+
+[project.scripts]
+salmopredict = "salmopredict.cli:main"
+
+[tool.setuptools]
+packages = ["salmopredict", "salmopredict.core", "salmopredict.gui"]
+
+[tool.setuptools.package-data]
+"salmopredict.gui" = ["assets/*.png"]
+# Uncomment to ship the ~30 MB slim deployment model inside the wheel. Left off
+# by default so `pip install` stays light; distribute the model via a release
+# and point --model / $SALMOPREDICT_MODEL at it, or drop it under models/.
+# "salmopredict" = ["models/**"]

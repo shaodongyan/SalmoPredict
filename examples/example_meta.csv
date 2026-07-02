@@ -1,0 +1,11 @@
+Sample,serotype,dose_cfu,source,region
+S001,Enteritidis,500,retail chicken,North
+S002,Enteritidis,1000,retail pork,East
+S003,Enteritidis,2000,retail beef,South
+S004,Enteritidis,10000,retail chicken,Central
+S005,Enteritidis,100000,retail pork,West
+S006,Typhimurium,500,retail chicken,North
+S007,Typhimurium,1000,retail pork,East
+S008,Typhimurium,2000,retail beef,South
+S009,Typhimurium,10000,retail chicken,Central
+S010,Typhimurium,100000,retail pork,West
