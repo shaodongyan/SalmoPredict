@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "salmopredict"
-version = "0.1.1"
+dynamic = ["version"]   # read from salmopredict.__version__ (single source of truth)
 description = "AutoGluon-based Incidence predictor for Salmonella virulence-factor gene-frequency features"
 readme = "README.md"
 # Pinned to 3.10 to match the Python version the bundled model was pickled with.
@@ -47,3 +47,6 @@ packages = ["salmopredict", "salmopredict.core", "salmopredict.gui"]
 # Ship the ~30 MB slim deployment model inside the wheel so `pip install
 # salmopredict` works out of the box -- no extra download and no --model flag.
 "salmopredict" = ["models/**"]
+
+[tool.setuptools.dynamic]
+version = { attr = "salmopredict.__version__" }

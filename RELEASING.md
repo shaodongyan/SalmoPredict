@@ -25,9 +25,11 @@ package is pinned to Python 3.10 to match the model's pickle.
 
 ## Release steps
 
-1. **Bump the version.** Edit `version = "X.Y.Z"` in `pyproject.toml`. PyPI never
-   lets you re-upload an existing version, so this must increase every release
-   (`0.1.1` → `0.1.2` for fixes, `0.2.0` for features).
+1. **Bump the version.** Edit `__version__ = "X.Y.Z"` in
+   `salmopredict/__init__.py` — this is the single source of truth
+   (`pyproject.toml` reads it via `[tool.setuptools.dynamic]`, and the CLI/GUI
+   display it). PyPI never lets you re-upload an existing version, so this must
+   increase every release (`0.1.2` → `0.1.3` for fixes, `0.2.0` for features).
 
 2. **Commit and push the bump.**
 

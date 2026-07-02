@@ -37,6 +37,7 @@ from salmopredict.pipeline import run_pipeline
 _ASSETS = Path(__file__).resolve().parent / "assets"
 _ICON_PATH = _ASSETS / "salmopredict_icon.png"   # salmopredict app icon (square)
 _LOGO_PATH = _ASSETS / "vphs_logo.png"           # VPHS lab logo (banner)
+_CFSA_PATH = _ASSETS / "cfsa_logo.png"           # CFSA collaborator logo
 
 _STAGE_LABELS = {
     "load": "Loading model",
@@ -75,8 +76,11 @@ st.set_page_config(
     layout="wide",
 )
 
-# Header: salmopredict app icon + title on the left, VPHS lab logo top-right.
-_icon_col, _title_col, _logo_col = st.columns([1, 4, 2])
+# Header: salmopredict app icon + title on the left; the VPHS lab logo and the
+# CFSA collaborator logo top-right.
+_icon_col, _title_col, _vphs_col, _cfsa_col = st.columns(
+    [1, 5, 2.2, 1.5], vertical_alignment="center"
+)
 with _icon_col:
     if _ICON_PATH.exists():
         st.image(str(_ICON_PATH))
@@ -85,9 +89,12 @@ with _title_col:
     st.caption(
         f"Salmonella incidence prediction from virulence-factor gene features (v{__version__})"
     )
-with _logo_col:
+with _vphs_col:
     if _LOGO_PATH.exists():
         st.image(str(_LOGO_PATH))
+with _cfsa_col:
+    if _CFSA_PATH.exists():
+        st.image(str(_CFSA_PATH))
 
 st.markdown(DESCRIPTION)
 

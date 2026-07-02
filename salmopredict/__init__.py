@@ -13,7 +13,7 @@ salmopredict:
 The same core is shared by a command-line interface and a Streamlit GUI.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 
 # One-paragraph summary shown in both the CLI help and the GUI, so the two
 # interfaces describe the tool with identical wording.
