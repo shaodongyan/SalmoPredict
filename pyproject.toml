@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "salmopredict"
-version = "0.1.0"
+version = "0.1.1"
 description = "AutoGluon-based Incidence predictor for Salmonella virulence-factor gene-frequency features"
 readme = "README.md"
 # Pinned to 3.10 to match the Python version the bundled model was pickled with.
@@ -22,9 +22,13 @@ dependencies = [
     "pandas>=2.0",
     "openpyxl>=3.0",
     "rich-argparse>=1.4",
+    "streamlit>=1.30",
 ]
 
 [project.optional-dependencies]
+# The GUI is a headline feature and streamlit is tiny next to autogluon, so it
+# now ships in the core dependencies above. This extra is kept as a no-op alias
+# so an existing `pip install "salmopredict[gui]"` keeps working.
 gui = ["streamlit>=1.30"]
 
 [project.urls]

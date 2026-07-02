@@ -41,7 +41,7 @@ conda activate salmopredict
 Or install into an existing env that already has a working AutoGluon 1.1.1:
 
 ```bash
-pip install -e .          # add [gui] for the Streamlit interface: pip install -e ".[gui]"
+pip install -e .          # installs the CLI and the Streamlit GUI
 ```
 
 ## The model
