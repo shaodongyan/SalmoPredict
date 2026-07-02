@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="salmopredict/gui/assets/salmopredict_icon.png" alt="salmopredict" width="200">
+  <img src="https://raw.githubusercontent.com/shaodongyan/SalmoPredict/main/salmopredict/gui/assets/salmopredict_icon.png" alt="salmopredict" width="200">
 </p>
 
 # salmopredict
@@ -98,5 +98,5 @@ University, in collaboration with the China National Center for Food Safety Risk
 Assessment (CFSA).
 
 <p align="center">
-  <img src="salmopredict/gui/assets/vphs_logo.png" alt="State Key Laboratory of Veterinary Public Health and Safety" width="360">
+  <img src="https://raw.githubusercontent.com/shaodongyan/SalmoPredict/main/salmopredict/gui/assets/vphs_logo.png" alt="State Key Laboratory of Veterinary Public Health and Safety" width="360">
 </p>

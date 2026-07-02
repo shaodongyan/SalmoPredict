@@ -10,7 +10,7 @@ readme = "README.md"
 # Pinned to 3.10 to match the Python version the bundled model was pickled with.
 requires-python = ">=3.10,<3.11"
 license = { text = "Apache-2.0" }
-authors = [{ name = "salmopredict authors" }]
+authors = [{ name = "Dongyan Shao", email = "563608176@qq.com" }]
 keywords = ["salmonella", "incidence", "autogluon", "prediction", "bioinformatics"]
 classifiers = [
     "License :: OSI Approved :: Apache Software License",
@@ -27,6 +27,11 @@ dependencies = [
 [project.optional-dependencies]
 gui = ["streamlit>=1.30"]
 
+[project.urls]
+Homepage = "https://github.com/shaodongyan/SalmoPredict"
+Repository = "https://github.com/shaodongyan/SalmoPredict"
+Issues = "https://github.com/shaodongyan/SalmoPredict/issues"
+
 [project.scripts]
 salmopredict = "salmopredict.cli:main"
 
@@ -35,7 +40,6 @@ packages = ["salmopredict", "salmopredict.core", "salmopredict.gui"]
 
 [tool.setuptools.package-data]
 "salmopredict.gui" = ["assets/*.png"]
-# Uncomment to ship the ~30 MB slim deployment model inside the wheel. Left off
-# by default so `pip install` stays light; distribute the model via a release
-# and point --model / $SALMOPREDICT_MODEL at it, or drop it under models/.
-# "salmopredict" = ["models/**"]
+# Ship the ~30 MB slim deployment model inside the wheel so `pip install
+# salmopredict` works out of the box -- no extra download and no --model flag.
+"salmopredict" = ["models/**"]

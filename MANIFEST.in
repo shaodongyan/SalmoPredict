@@ -1,0 +1,8 @@
+# The wheel gets the model + assets via [tool.setuptools.package-data]; the
+# source distribution (sdist) needs them listed here too, otherwise `python -m
+# build` produces a modelless tarball.
+recursive-include salmopredict/models *
+recursive-include salmopredict/gui/assets *.png
+include LICENSE
+include environment.yml
+include examples/*.csv
