@@ -29,16 +29,37 @@ Metadata is joined on the `Sample` key (the metadata CSV must also have a
 
 ## Install
 
-The model must be loaded with **AutoGluon 1.1.1**. Reproduce the environment
-with conda (AutoGluon is installed via pip inside the env — conda-installed
-AutoGluon does not resolve cleanly for this project):
+salmopredict runs on **Python 3.10** and loads its model with **AutoGluon
+1.1.1** — both are hard requirements, because the model is pickled with that
+exact stack.
+
+**From PyPI (recommended).** In a Python 3.10 environment:
+
+```bash
+pip install salmopredict
+```
+
+This pulls in AutoGluon 1.1.1, the Streamlit GUI, and the bundled prediction
+model, so both interfaces work out of the box:
+
+```bash
+salmopredict run -i features.csv -o results/   # command line
+salmopredict gui                                # browser GUI
+```
+
+No Python 3.10 environment yet? Create one first, e.g.
+`conda create -n salmopredict python=3.10 && conda activate salmopredict`.
+
+**Reproducible environment (from a clone).** Pins Python 3.10 and installs
+AutoGluon via pip inside the env (conda-installed AutoGluon does not resolve
+cleanly for this project):
 
 ```bash
 conda env create -f environment.yml
 conda activate salmopredict
 ```
 
-Or install into an existing env that already has a working AutoGluon 1.1.1:
+**Editable / development install (from a clone).**
 
 ```bash
 pip install -e .          # installs the CLI and the Streamlit GUI
@@ -46,10 +67,10 @@ pip install -e .          # installs the CLI and the Streamlit GUI
 
 ## The model
 
-The prediction model is **already bundled** in this repository at
-`salmopredict/models/model_default` — a 30 MB deployment. salmopredict uses it
-automatically, so the tool works out of the box with no extra download or build
-step.
+The prediction model is **already bundled** with salmopredict — both in this
+repository and inside the PyPI wheel — at `salmopredict/models/model_default`, a
+30 MB deployment. salmopredict uses it automatically, so the tool works out of
+the box with no extra download or build step.
 
 Model resolution order is `--model`, then `$SALMOPREDICT_MODEL`, then the single
 directory under the package `models/` folder; with nothing specified it uses the
