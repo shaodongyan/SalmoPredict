@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="salmopredict/gui/assets/salmopredict_icon.png" alt="salmopredict" width="200">
+</p>
+
 # salmopredict
 
 AutoGluon-based **Incidence** predictor for *Salmonella* virulence-factor
@@ -42,20 +46,15 @@ pip install -e .          # add [gui] for the Streamlit interface: pip install -
 
 ## The model
 
-The full training artifact is ~700 MB (200+ candidate models × 5 folds). For
-inference you only need `WeightedEnsemble_L2` and its dependencies. Build a
-slim ~30 MB deployment copy once (the source is never modified):
+The prediction model is **already bundled** in this repository at
+`salmopredict/models/model_default` — a 30 MB deployment. salmopredict uses it
+automatically, so the tool works out of the box with no extra download or build
+step.
 
-```bash
-salmopredict build-model \
-  --source '/path/to/model/model_VF_USA_54-0*2' \
-  -o salmopredict/models/model_VF_USA_deploy
-```
-
-salmopredict finds a model in this order: `--model`, then `$SALMOPREDICT_MODEL`,
-then the single directory under the package `models/` folder. Distribute the
-~30 MB slim model via a release (or drop it under `models/`) and point `--model`
-at it.
+Model resolution order is `--model`, then `$SALMOPREDICT_MODEL`, then the single
+directory under the package `models/` folder; with nothing specified it uses the
+bundled `model_default`. Pass `--model /path/to/other` to run a different
+AutoGluon model.
 
 ## Usage
 
@@ -97,3 +96,7 @@ Licensed under the [Apache License, Version 2.0](LICENSE). Developed at the Stat
 Key Laboratory of Veterinary Public Health and Safety, China Agricultural
 University, in collaboration with the China National Center for Food Safety Risk
 Assessment (CFSA).
+
+<p align="center">
+  <img src="salmopredict/gui/assets/vphs_logo.png" alt="State Key Laboratory of Veterinary Public Health and Safety" width="360">
+</p>
