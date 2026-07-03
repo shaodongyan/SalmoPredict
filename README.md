@@ -113,10 +113,13 @@ features are missing.
 
 ## License
 
-Licensed under the [Apache License, Version 2.0](LICENSE). Developed at the State
-Key Laboratory of Veterinary Public Health and Safety, China Agricultural
-University, in collaboration with the China National Center for Food Safety Risk
-Assessment (CFSA).
+Licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE): free to use,
+modify, and share for any **noncommercial** purpose — including research,
+teaching, and personal use, and by academic, government, public-health, and
+other nonprofit organizations — but **commercial use is not permitted**.
+Developed at the State Key Laboratory of Veterinary Public Health and Safety,
+China Agricultural University, in collaboration with the China National Center
+for Food Safety Risk Assessment (CFSA).
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/shaodongyan/SalmoPredict/main/salmopredict/gui/assets/vphs_logo.png" alt="State Key Laboratory of Veterinary Public Health and Safety" height="80">
